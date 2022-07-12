@@ -19,10 +19,11 @@
 //   return split;
 // }
 
-function reverseInt(n) {
-  const reversed = n.toString().split('').reverse().join('');
+//USING math.sign()
+// function reverseInt(n) {
+//   const reversed = n.toString().split('').reverse().join('');
 
-  return parseInt(reversed) * Math.sign(n);
-}
+//   return parseInt(reversed) * Math.sign(n);
+// }
 
 module.exports = reverseInt;
