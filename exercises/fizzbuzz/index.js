@@ -12,6 +12,21 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+function fizzBuzz(n) {
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      // check for 3 and 5 first! For some reason this doesnt work
+      // if this first if statement is at the end.
+      console.log('fizzbuzz');
+    } else if (i % 5 === 0) {
+      console.log('buzz');
+    } else if (i % 3 === 0) {
+      console.log('fizz');
+    } else {
+      console.log(i);
+      // console.log(i) NOT n
+    }
+  }
+}
 
 module.exports = fizzBuzz;
