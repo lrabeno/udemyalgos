@@ -8,6 +8,8 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
+// UDEMY SOLUTION 1
+
 // function anagrams(stringA, stringB) {
 //   const aCharMap = buildCharMap(stringA);
 //   const bCharMap = buildCharMap(stringB);
@@ -32,6 +34,16 @@
 //   }
 //   return charMap;
 // }
+
+// UDEMY SOLUTION 2
+
+function anagrams(stringA, stringB) {
+  return cleanString(stringA) === cleanString(stringB);
+}
+
+function cleanString(str) {
+  return str.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+}
 
 // MY SOLUTION
 
@@ -78,26 +90,26 @@
 
 // MY SOLUTION 2
 
-function anagrams(stringA, stringB) {
-  const strA = stringA
-    .replace(/[^\w]/g, '')
-    .toLowerCase()
-    .split('')
-    .sort()
-    .join('');
+// function anagrams(stringA, stringB) {
+//   const strA = stringA
+//     .replace(/[^\w]/g, '')
+//     .toLowerCase()
+//     .split('')
+//     .sort()
+//     .join('');
 
-  const strB = stringB
-    .replace(/[^\w]/g, '')
-    .toLowerCase()
-    .split('')
-    .sort()
-    .join('');
+//   const strB = stringB
+//     .replace(/[^\w]/g, '')
+//     .toLowerCase()
+//     .split('')
+//     .sort()
+//     .join('');
 
-  if (strA === strB) {
-    return true;
-  } else {
-    return false;
-  }
-}
+//   if (strA === strB) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
 
 module.exports = anagrams;
