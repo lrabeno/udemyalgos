@@ -33,45 +33,70 @@
 //   return charMap;
 // }
 
-// My solution
+// MY SOLUTION
+
+// function anagrams(stringA, stringB) {
+//   const strA = stringA
+//     .replace(/[^\w]/g, '')
+//     .toLowerCase()
+//     .split('')
+//     .reduce((allLetters, letter) => {
+//       if (letter in allLetters) {
+//         allLetters[letter]++;
+//       } else {
+//         allLetters[letter] = 1;
+//       }
+
+//       return allLetters;
+//     }, {});
+
+//   const strB = stringB
+//     .replace(/[^\w]/g, '')
+//     .toLowerCase()
+//     .split('')
+//     .reduce((allLetters, letter) => {
+//       if (letter in allLetters) {
+//         allLetters[letter]++;
+//       } else {
+//         allLetters[letter] = 1;
+//       }
+
+//       return allLetters;
+//     }, {});
+
+//   if (Object.keys(strA).length !== Object.keys(strB).length) {
+//     return false;
+//   }
+//   for (let char in strA) {
+//     if (strA[char] === strB[char]) {
+//       return true;
+//     } else {
+//       return false;
+//     }
+//   }
+// }
+
+// MY SOLUTION 2
+
 function anagrams(stringA, stringB) {
   const strA = stringA
     .replace(/[^\w]/g, '')
     .toLowerCase()
     .split('')
-    .reduce((allLetters, letter) => {
-      if (letter in allLetters) {
-        allLetters[letter]++;
-      } else {
-        allLetters[letter] = 1;
-      }
-
-      return allLetters;
-    }, {});
+    .sort()
+    .join('');
 
   const strB = stringB
     .replace(/[^\w]/g, '')
     .toLowerCase()
     .split('')
-    .reduce((allLetters, letter) => {
-      if (letter in allLetters) {
-        allLetters[letter]++;
-      } else {
-        allLetters[letter] = 1;
-      }
+    .sort()
+    .join('');
 
-      return allLetters;
-    }, {});
-
-  if (Object.keys(strA).length !== Object.keys(strB).length) {
+  if (strA === strB) {
+    return true;
+  } else {
     return false;
-  }
-  for (let char in strA) {
-    if (strA[char] === strB[char]) {
-      return true;
-    } else {
-      return false;
-    }
   }
 }
 
