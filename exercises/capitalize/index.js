@@ -8,13 +8,25 @@
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
 //USING FOR EACH
+
+// function capitalize(str) {
+//   const words = [];
+//   let arr = str.split(' ');
+
+//   arr.forEach((element, i) => {
+//     words.push(element[0].toUpperCase() + element.slice(1));
+//   });
+//   return words.join(' ');
+// }
+
+// USING FOR OF LOOP
+
 function capitalize(str) {
   const words = [];
-  let arr = str.split(' ');
 
-  arr.forEach((element, i) => {
-    words.push(element[0].toUpperCase() + element.slice(1));
-  });
+  for (word of str.split(' ')) {
+    words.push(word[0].toUpperCase() + word.slice(1));
+  }
   return words.join(' ');
 }
 
