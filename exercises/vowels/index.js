@@ -7,26 +7,11 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-// function vowels(str) {
-//   let count = 0;
-//   const regex = /[aeiou]/gi;
-//   let result = str.match(regex);
-//   if (result.length === null) {
-//     return 0;
-//   } else {
-//     return result.length;
-//   }
-//   if (str.match(regex)) {
-//     count++;
-//   }
-//   for (let i = 0; i <= str.length; i++) {
-//     if (str[i] === regex) {
-//       count++;
-//     }
-//   }
-
-//   return count;
-// }
+// REGEX SOLUTION
+function vowels(str) {
+  const matches = str.match(/[aeiou]/gi);
+  return matches ? matches.length : 0;
+}
 
 // function vowels(str) {
 //   let count = 0;
